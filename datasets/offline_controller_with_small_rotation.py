@@ -553,7 +553,8 @@ class OfflineControllerWithSmallRotation(BaseController):
         self.graph_file_name = graph_file_name
         self.metadata_file_name = metadata_file_name
         self.images_file_name = images_file_name
-        self.att_feature_file_name = 'att_in_view_v1.hdf5'
+        self.att_feature_file_name = 'att_in_view_v2.hdf5'
+        print(self.att_feature_file_name)
         self.grid = None
         self.graph = None
         self.metadata = None
@@ -658,7 +659,6 @@ class OfflineControllerWithSmallRotation(BaseController):
                 ),
                 'r',
             )
-
         self.state = self.get_full_state(
             **self.grid[0], rotation=random.choice(self.rotations)
         )

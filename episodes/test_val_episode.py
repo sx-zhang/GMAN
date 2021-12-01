@@ -61,7 +61,7 @@ class TestValEpisode(BasicEpisode):
         self.failed_action_count = 0
         self.prev_frame = None
         self.current_frame = None
-
+        self.last_state = None
         if self.file is None:
             sample_scene = scenes[0]
             if "physics" in sample_scene:
@@ -77,6 +77,23 @@ class TestValEpisode(BasicEpisode):
             self.all_data = pickle.load(self.file)
             self.file.close()
             self.all_data_enumerator = 0
+
+            ## byb add for visual
+            # room_num = 27
+            # type2str = {
+            #     'kitchen':'n'+str(room_num),
+            #     'living_room': '2'+str(room_num),
+            #     'bedroom':'3'+str(room_num),
+            #     'bathroom':'4' +str(room_num)
+            # }
+            # all_data = self.all_data
+            # self.all_data = []
+            # for data in all_data:
+            #     if type2str[scene_type] in data["scene"]:
+            #         self.all_data.append(data)
+            # print(scene_type,len(self.all_data),self.all_data[0]["scene"])
+            ######
+
 
         episode = self.all_data[self.all_data_enumerator]
         self.all_data_enumerator += 1

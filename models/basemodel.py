@@ -104,7 +104,6 @@ class BaseModel(torch.nn.Module):
         self.action_predict_linear = nn.Linear(2 * lstm_input_sz, action_space)
 
         self.dropout = nn.Dropout(p=args.dropout_rate)
-
         self.attributes_dictionary = scio.loadmat('./data/attributes/40_attribute.mat')
         self.att_episode = None
         # generator
@@ -112,6 +111,7 @@ class BaseModel(torch.nn.Module):
         latent_size = 45
         generator = Generator(decoder_layer_sizes, latent_size)
         generator.load_state_dict(torch.load('./pretrained_models/netG.pth', map_location=lambda storage, loc: storage))
+        # generator.load_state_dict(torch.load('./pretrained_models/netG.pth'))
         self.generator = generator
         for param in self.generator.parameters():
             if args.G_grad:
@@ -324,7 +324,6 @@ class BaseModel(torch.nn.Module):
 
         x, image_embedding = self.embedding(state, target, action_probs, params, att_episode, att_in_view)
         actor_out, critic_out, (hx, cx) = self.a3clstm(x, (hx, cx), params)
-
         return ModelOutput(
             value=critic_out,
             logit=actor_out,

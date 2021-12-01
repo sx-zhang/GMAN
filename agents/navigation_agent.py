@@ -16,7 +16,6 @@ class NavigationAgent(ThorAgent):
 
         episode_constructor = episode_class(args.episode_type)
         episode = episode_constructor(args, gpu_id, args.strict_done)
-
         super(NavigationAgent, self).__init__(
             create_model(args), args, rank, episode, max_episode_length, gpu_id
         )

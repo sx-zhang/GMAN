@@ -6,7 +6,6 @@ from torch.autograd import Variable
 
 def run_episode(player, args, total_reward, model_options, training):
     num_steps = args.num_steps
-
     for _ in range(num_steps):
         player.action(model_options, training)
         total_reward = total_reward + player.reward

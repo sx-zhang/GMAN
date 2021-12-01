@@ -1,7 +1,7 @@
 from .nonadaptivea3c_train import nonadaptivea3c_train
 from .nonadaptivea3c_val import nonadaptivea3c_val
-from .savn_train import savn_train
-from .savn_val import savn_val
+from .gman_train import gman_train
+from .gman_val import gman_val
 
 trainers = [ 
     'vanilla_train',

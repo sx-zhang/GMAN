@@ -33,7 +33,6 @@ def nonadaptivea3c_train(
     res_queue,
     end_flag,
 ):
-
     glove = Glove(args.glove_file)
     scenes, possible_targets, targets = get_data(args.scene_types, args.train_scenes)
 
@@ -46,7 +45,6 @@ def nonadaptivea3c_train(
     gpu_id = args.gpu_ids[rank % len(args.gpu_ids)]
 
     import torch
-
     torch.cuda.set_device(gpu_id)
 
     torch.manual_seed(args.seed + rank)

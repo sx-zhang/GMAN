@@ -43,7 +43,7 @@ class BasicEpisode(Episode):
         if args.eval:
             random.seed(args.seed)
 
-    @propertyv
+    @property
     def environment(self):
         return self._env
 
@@ -158,6 +158,7 @@ class BasicEpisode(Episode):
                     break
             if done:
                 reward = self.att_reward(self.target_object, self.atts, self.ids)
+                # print(reward)
             else:
                 reward = 0.1 * self.att_reward(self.target_object, self.atts, self.ids)
         else:
