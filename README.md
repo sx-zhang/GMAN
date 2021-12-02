@@ -20,3 +20,28 @@ The `data` folder should look like this
         ├── FloorPlan2/
         └── ...
 ```
+## Training and Evaluation
+### Train the baseline model 
+`python main.py --title Basemodel --model BaseModel --workers 12 -–gpu-ids 0`
+### Train our GMAN model 
+`python main.py --title GMAN --model GMAN --workers 12 -–gpu-ids 0 --num_steps 20`
+### Evaluate the GMAN model for seen objects 
+```python
+python full_eval.py \
+    --title GMAN \
+    --model GMAN \
+    --results-json GMAN_seen.json \
+    --gpu-ids 0 \
+    --num_steps 20 \
+    --seen seen
+```
+### Evaluate the GMAN model for unseen objects 
+```python
+python full_eval.py \
+    --title GMAN \
+    --model GMAN \
+    --results-json GMAN_unseen.json \
+    --gpu-ids 0 \
+    --num_steps 20 \
+    --seen unseen
+```
