@@ -5,18 +5,18 @@
 - Create conda environment. `conda env create -f environment.yml`
 - Activate the environment. `conda activate ng`
 - We provide pre-trained model of our GMAN in the `trained_models` directory.
-- Download the [dataset](), and change the `--offline_data_dir` in `utils/flag_parser.py`. The offline data is discretized from [AI2THOR](https://ai2thor.allenai.org/) simulator.  
+- Download the [dataset](). The offline data is discretized from [AI2THOR](https://ai2thor.allenai.org/) simulator.  
 The `data` folder should look like this
 ```python
   data/ 
-    └── Scene_Data/
+    └── New_ai2thor_40/
         ├── FloorPlan1/
         │   ├── resnet18_featuremap.hdf5
         │   ├── graph.json
-        │   ├── visible_object_map_1.5.json
-        │   ├── det_feature_categories.hdf5
+        │   ├── visible_object_map.json
+        │   ├── att_in_view_v2.hdf5
         │   ├── grid.json
-        │   └── optimal_action.json
+        │   ├── object_poses.json
         ├── FloorPlan2/
         └── ...
 ```

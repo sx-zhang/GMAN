@@ -211,7 +211,7 @@ def parse_arguments():
     parser.add_argument(
         "--offline_data_dir",
         type=str,
-        default="/data/New_ai2thor_40",
+        default="./data/New_ai2thor_40",
         help="where dataset is stored.",
     )
     parser.add_argument(
