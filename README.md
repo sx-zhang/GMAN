@@ -26,7 +26,7 @@ The `data` folder should look like this
 ### Train our GMAN model 
 `python main.py --title GMAN --model GMAN --workers 12 -–gpu-ids 0 --num_steps 20`
 ### Evaluate the GMAN model for seen objects 
-```python
+```shell
 python full_eval.py \
     --title GMAN \
     --model GMAN \
@@ -36,7 +36,7 @@ python full_eval.py \
     --seen seen
 ```
 ### Evaluate the GMAN model for unseen objects 
-```python
+```shell
 python full_eval.py \
     --title GMAN \
     --model GMAN \
