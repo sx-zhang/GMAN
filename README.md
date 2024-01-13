@@ -5,10 +5,9 @@
 - Create conda environment. `conda env create -f environment.yml`
 - Activate the environment. `conda activate ng`
 - We provide pre-trained model of our GMAN in the `trained_models` directory.
-- Download our dataset. The offline data is discretized from [AI2THOR](https://ai2thor.allenai.org/) simulator.  
-`wget http://123.57.42.89/Dataset_ict/ai2thor.tar.gz`
+- Download our [dataset](https://drive.google.com/file/d/1cyUH6hMrfiJD5VC2FFCYZY0hGJR78lQ5/view?usp=sharing). 
 - Then extract files in `data` by
-`tar -zxvf ai2thor.tar.gz`
+`tar -zxvf ai2thor_GMAN.tar.gz`
 - The `data` folder should look like this
 ```python
   data/ 
